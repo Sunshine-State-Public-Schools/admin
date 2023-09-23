@@ -1,36 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Admin Dashboard - SSPCSchools</title>
-  <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Include your CSS styles -->
+  <title>SSPCSchools Admin Dashboard</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
 
-<!-- Header -->
-<header>
-  <h1>Welcome, [Admin Name]</h1>
-</header>
+<div id="login-container">
+  <h1>Admin Login</h1>
+  <form id="login-form" onsubmit="login(event)">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br>
+    <button type="submit">Login</button>
+  </form>
+</div>
 
-<!-- Sidebar/Navigation -->
-<nav>
-  <ul>
-    <li><a href="#">Dashboard</a></li>
-    <li><a href="#">Users</a></li>
-    <li><a href="#">Classes/Courses</a></li>
-    <li><a href="#">Attendance</a></li>
-    <!-- Add more menu items as needed -->
-  </ul>
-</nav>
+<div id="dashboard-container" style="display: none;">
+  <header>
+    <h1>Welcome, <span id="username-display"></span></h1>
+  </header>
+  <!-- Rest of the dashboard content goes here -->
+  <footer>
+    <p>&copy; 2023 SSPCSchools. All rights reserved.</p>
+  </footer>
+</div>
 
-<!-- Main Content Area -->
-<main>
-  <!-- Display system overview, statistics, recent activities, etc. -->
-</main>
-
-<!-- Footer -->
-<footer>
-  <p>&copy; 2023 SSPCSchools. All rights reserved.</p>
-</footer>
-
+<script src="script.js"></script>
 </body>
 </html>
