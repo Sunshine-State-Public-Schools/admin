@@ -1,5 +1,7 @@
+let loginPopup;
+
 function openLoginPopup() {
-  const loginPopup = window.open('login.html', 'Login', 'width=400,height=400');
+  loginPopup = window.open('login.html', 'Login', 'width=400,height=400');
   loginPopup.focus();
 }
 
@@ -19,9 +21,12 @@ function handleLogin() {
 
   const loggedInUser = loginUser(username, password);
   if (loggedInUser) {
-    document.getElementById('login-container').style.display = 'none';
-    document.getElementById('dashboard-container').style.display = 'block';
-    document.getElementById('username-display').innerText = loggedInUser;
+    // Redirect to dashboard.html
+    window.location.href = 'dashboard.html';
+    // Close the popup window
+    if (loginPopup) {
+      loginPopup.close();
+    }
   } else {
     alert('Invalid credentials. Please try again.');
   }
