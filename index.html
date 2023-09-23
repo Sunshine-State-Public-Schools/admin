@@ -8,13 +8,7 @@
 
 <div id="login-container">
   <h1>Admin Login</h1>
-  <form id="login-form" onsubmit="login(event)">
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required><br>
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required><br>
-    <button type="submit">Login</button>
-  </form>
+  <button onclick="login()">Login with Netlify Identity</button>
 </div>
 
 <div id="dashboard-container" style="display: none;">
@@ -27,6 +21,7 @@
   </footer>
 </div>
 
+<script src="https://unpkg.com/netlify-identity-widget/dist/netlify-identity-widget.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
