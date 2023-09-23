@@ -5,29 +5,13 @@ function openLoginPopup() {
   loginPopup.focus();
 }
 
-function loginUser(username, password) {
-  if (username === 'mason' && password === '20091009') {
-    return 'Mason';
-  } else if (username === 'admin' && password === 'administration') {
-    return 'Administrator';
-  } else {
-    return null;
-  }
-}
-
-function handleLogin() {
-  const username = document.getElementById('username').value;
-  const password = document.getElementById('password').value;
-
-  const loggedInUser = loginUser(username, password);
-  if (loggedInUser) {
-    // Redirect to dashboard.html
-    window.location.href = 'dashboard.html';
-    // Close the popup window
-    if (loginPopup) {
-      loginPopup.close();
-    }
-  } else {
-    alert('Invalid credentials. Please try again.');
+// This function will be called by login.html after successful login
+function onLoginSuccess(username) {
+  // Redirect to dashboard.html
+  window.location.href = 'dashboard.html';
+  
+  // Close the popup window
+  if (loginPopup) {
+    loginPopup.close();
   }
 }
