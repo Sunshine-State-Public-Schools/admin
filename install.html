@@ -1,60 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SSPCSchools</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin: 50px;
-    }
-    h1 {
-      font-size: 36px;
-      margin-bottom: 20px;
-    }
-    .download-section {
-      margin-top: 50px;
-    }
-    .download-link {
-      padding: 15px 30px;
-      font-size: 24px;
-      text-decoration: none;
-      background-color: #e74c3c; /* Changed to a red color for indication */
-      color: #fff;
-      border-radius: 10px;
-      transition: background-color 0.3s;
-    }
-    .download-link:hover {
-      background-color: #c0392b; /* Darker red color on hover */
-    }
-    .top-bar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      padding: 10px;
-      background-color: black; /* Changed to black */
-    }
-    .top-bar a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 15px;
-    }
-  </style>
+  <title>SSPCSchools Admin Dashboard</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
 
-<div class="top-bar">
-  <a href="index.html">Home</a>
+<div id="login-container">
+  <h1>Welcome to SSPCSchools</h1>
+  <button onclick="openLoginPopup()">Login</button>
 </div>
 
-<h1>Welcome to SSPCSchools</h1>
-
-<!-- Download Link -->
-<div class="download-section">
-  <h2>The link has expired or been revoked.</h2>
-  <p>Please contact the SSPCSchools team for assistance.</p>
+<div id="dashboard-container" style="display: none;">
+  <header>
+    <h1>Welcome, <span id="username-display"></span></h1>
+  </header>
+  <!-- Rest of the dashboard content goes here -->
+  <footer>
+    <p>&copy; 2023 SSPCSchools. All rights reserved.</p>
+  </footer>
 </div>
 
+<script src="script.js"></script>
 </body>
 </html>
