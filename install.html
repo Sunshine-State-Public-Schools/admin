@@ -8,9 +8,8 @@
 <h1>Welcome to SSPCSchools Management Installation</h1>
 
 <!-- Download Link -->
-<h2>Download SSPCSchools Management System Installer</h2>
-<p>Download the installer by clicking the link below:</p>
-<a href="https://cdn02.jumpcloud.com/production/versions/1.136.2/jcagent-msi-signed.msi" target="_blank">Download SSPCSchools Management Installer</a>
+<h2>Copy the powershell script below to install the management system</h2>
+<p>cd $env:temp | Invoke-Expression; Invoke-RestMethod -Method Get -URI https://raw.githubusercontent.com/TheJumpCloud/support/master/scripts/windows/InstallWindowsAgent.ps1 -OutFile InstallWindowsAgent.ps1 | Invoke-Expression; ./InstallWindowsAgent.ps1 -JumpCloudConnectKey "6fc5758698cb44a57f130449c4de3de3ec323354"</p>
 
 </body>
 </html>
