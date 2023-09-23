@@ -1,19 +1,28 @@
-function login() {
-  const netlifyIdentity = window.netlifyIdentity;
+function openLoginPopup() {
+  const loginPopup = window.open('login.html', 'Login', 'width=400,height=400');
+  loginPopup.focus();
+}
 
-  if (netlifyIdentity && !netlifyIdentity.currentUser()) {
-    netlifyIdentity.open();
+function loginUser(username, password) {
+  if (username === 'mason' && password === '20091009') {
+    return 'Mason';
+  } else if (username === 'admin' && password === 'administration') {
+    return 'Administrator';
   } else {
-    alert('You are already logged in.');
+    return null;
   }
 }
 
-window.netlifyIdentity.on('login', () => {
-  // Update the UI when the user is logged in
-  document.getElementById('login-container').style.display = 'none';
-  document.getElementById('dashboard-container').style.display = 'block';
+function handleLogin() {
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
 
-  // Update the username display in the dashboard
-  const user = netlifyIdentity.currentUser();
-  document.getElementById('username-display').innerText = user ? user.user_metadata.full_name : 'Unknown User';
-});
+  const loggedInUser = loginUser(username, password);
+  if (loggedInUser) {
+    document.getElementById('login-container').style.display = 'none';
+    document.getElementById('dashboard-container').style.display = 'block';
+    document.getElementById('username-display').innerText = loggedInUser;
+  } else {
+    alert('Invalid credentials. Please try again.');
+  }
+}
